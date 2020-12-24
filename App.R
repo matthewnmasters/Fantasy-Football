@@ -39,7 +39,7 @@ server<- function(input, output, session) {
     group_by(Name) %>%
     summarise_each(funs(mean)) %>%
     group_by(Name) %>%
-    mutate_each(funs(format(., nsmall=3)))
+    mutate_each(funs(round(., 3)))
     
   
   #create a reactive data set that filters based on selections from checkboxes
